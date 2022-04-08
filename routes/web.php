@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,6 @@ Route::get('adminlte', function () {
 Route::get('/vue', function () {
     return view('vue');
 });
+
+Route::get('/login', [LoginController::class, 'index'])->name('login-index');
+Route::post('/login', [LoginController::class, 'result'])->name('login-result');
